@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/post2.css">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<style>
+          /* Additional custom styles */
+          .transition-background {
+            transition: background-image 0.5s ease;
+        }
+
+</style>
+<body class="h-screen flex items-center justify-center transition-background bg-center bg-cover">
+  
+
+      <form action="/upload" method="post" enctype="multipart/form-data">
+
+        <div  class="upload-content">
+            <div class="uplaod-content__title"><span>Upload Content</span> </div>
+            <div  class="uplaod-content__add-media dropdown pull-right">
+              <input hidden id="feedfile" type="file" name="file">
+              <i id="upld" class="uplaod-content__am__icon " data-toggle="dropdown"> <i class="ri-add-line"></i>ClicK Here</i> <head> </head>
+              <ul class="dropdown-menu">
+                <li>
+                  <div className="uploadContent__al__photo">Add Image</div>
+                
+                 
+                </li>
+                <li>Add Link</li>
+              </ul>
+            </div>
+            <div  class="upload-content__details">
+              <div   class="upload-content__details__headline">
+                <div class="upload-content__dh__title">Caption</div>
+                <input id="caption" type="text" class="upload-content__dh__content" name="caption" placeholder="Enter Your Caption" >
+              </div>
+              <div class="upload-content__details__headline">
+                <div class="upload-content__dh__title">Discription</div>
+                <input id="caption" type="text" class="upload-content__dh__content" name="Discription" placeholder="Enter your Discription" >
+              </div>
+              <div class="blah"></div>
+            </div>
+            <div class="upload-content__add-content"></div>
+            
+            <button id="feedbtn" type="submit" class="btn btn-primary upload-content__button pull-right">Post Here</button>
+          </div>
+          
+      </form>
+
+      <a href="/feed" id="back" class="bg-blue-500 px-6 py-2 rounded-md shadow-lg text-white text-lg font-bold inline-block transition-colors duration-300 hover:bg-blue-600">
+        Back
+    </a>
+</body>
+<script>
+  document.querySelector("#upld").addEventListener('click',function(){
+    document.querySelector("#feedfile").click()
+  })
+
+  const backgroundImages = [
+            'url(https://images.unsplash.com/photo-1508717272800-9fff97da7e8f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
+            'url(https://images.unsplash.com/photo-1571757767119-68b8dbed8c97?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dXBsb2FkaW5nJTIwZm9yY2UlMjBhbmltZXxlbnwwfDB8MHx8fDA%3D)',
+            'url(https://images.unsplash.com/photo-1503805234579-984d0d042c62?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHVwbG9hZGluZyUyMGZvcmNlfGVufDB8fDB8fHww)',
+            'url(https://images.unsplash.com/photo-1707647132749-8f1322ed1b8b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzOXx8fGVufDB8fHx8fA%3D%3D)'
+        ];
+
+        // Set the interval time in milliseconds
+        const intervalTime = 5000; // 5 seconds
+
+        // Function to change the background image
+        function changeBackgroundImage() {
+            // Get a random image from the backgroundImages array
+            const randomImage = backgroundImages[Math.floor(Math.random() * backgroundImages.length)];
+            // Set the body's background image to the random image
+            document.body.style.backgroundImage = randomImage;
+        }
+
+        // Call the function initially
+        changeBackgroundImage();
+
+        // Set interval to change background image automatically
+        setInterval(changeBackgroundImage, intervalTime);
+</script>
+</html>

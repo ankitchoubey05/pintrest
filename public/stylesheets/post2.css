@@ -1,0 +1,129 @@
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: gilroy;
+
+}
+html,body{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ /*  background-position: center;
+  background-size: cover;
+  background-image: url(https://images.unsplash.com/photo-1508717272800-9fff97da7e8f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+ */
+}
+@mixin text-area-placeholder-color() {
+    &::-webkit-input-placeholder {
+        color: #e6e6e6;
+        font-size:12px;
+    }
+
+    &:-moz-placeholder {
+        color: #808080;
+    }
+
+    &::-moz-placeholder {
+        color: #808080;
+    }
+
+    &:-ms-input-placeholder {
+        color: #808080;
+    }
+}
+.upload-content {
+  padding: 30px 30px;
+  width: 600px;
+  font-size: 2rem;
+  /* background-color: red; */
+}
+
+.uplaod-content__title {
+  color: #cd040b;
+
+  margin-bottom: 20px;
+}
+
+.uplaod-content__am__icon {
+  background-color: white;
+  border-radius: 50%;
+  gap: 30px;
+  align-items: center;
+  display: flex;
+
+  border: 2px solid #cd040b;
+  color: #cd040b;
+  font-size: 20px !important;
+  height: 25px;
+  line-height: 23px !important;
+  padding: 2px 1px;
+  position: absolute;
+  width: 25px;
+  font-weight: 500;
+  
+}
+
+.uplaod-content__add-media {
+  margin-bottom: 10px;
+  
+}
+.upload-content__details{
+  margin-top:70px;
+  color: #000000;
+  font-size: 1.5rem;
+}
+.upload-content__details__headline {
+  margin-top:40px;
+ border-bottom: 1px solid #ccc;
+}
+.upload-content__dh__title{
+  margin-bottom:12px;
+}
+.upload-content__dh__content{
+   border: none;
+   border-bottom:1px soild #afafb9;
+   width: 100%;
+   height: 10vh;
+   font-size: 1.5rem;
+   outline: none;
+}
+.upload-content__button{
+  margin-top:100px;
+  width: fit-content;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 1rem;
+  background-color:rgb(255, 0, 0);
+  color:#ffffff;
+  border-color:#ffffff;
+  
+  font-weight: 500;
+}
+.blhah{
+  margin-top:25px;
+  list-style:none;
+  padding-left:0;
+}
+.dropdown-menu{
+  border:none;
+  margin-top: 30px;
+  margin-right: -89px;
+  display:none;
+}
+
+li{
+  padding:10px;
+}
+#caption{
+  background-color: #EAF0F3;
+ 
+}
+#back{
+  background-color: red;
+  position: absolute;
+  top: 8%;
+  left: 90%;
+}

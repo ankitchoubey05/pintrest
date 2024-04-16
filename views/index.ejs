@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pinterest - India</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="shortcut icon" href="/images/pinterest-logo-png-1984.png" type="image/x-icon">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen-Sans, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+        "Helvetica Neue", Helvetica, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",
+        メイリオ, Meiryo, Arial, sans-serif;
+    }
+
+    html,
+    body {
+      width: 100%;
+      /* overflow: hidden; */
+      height: 100%;
+    }
+
+    .swiper-pagination-bullet {
+      margin: 5px;
+      transform: rotate(90deg);
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: #e1e1e1;
+    }
+
+    input[type="date"]:before {
+      content: attr(placeholder);
+      display: inline-block;
+      color: #888;
+    }
+
+    /* Hide the default arrow button in some browsers */
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      display: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    @media (max-width: 1260px) {
+      .p-moving {
+        height: calc(100vh - 180px) !important;
+      }
+
+      .swiper-wrapper {
+        margin-top: 50px;
+      }
+
+      .swiper-wrapper h1 {
+        margin-top: -40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .p-page5 {
+        background-position: right top;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  
+  <div class="p-main max-w-8xl mx-auto min-h-screen relative">
+    <div class="p-page1 w-full h-screen bg-white relative p-[0.01px] overflow-hidden">
+      <div class="p-nav w-full h-16 flex items-center justify-between overflow-hidden bg-white fixed z-30  max-sm:text-[3vmin]">
+        <div class="p-nav1 flex items-center h-full w-8/12 md:max-2xl:w-1/4 font-medium text-black gap-2 text-base">
+          <img class="w-36" src="/images/Pinterest-Logo.wine.png" alt="" />
+          <a class="hidden md:max-2xl:block px-2.5 py-2 rounded-lg hover:bg-[#dadada]" href="https://in.pinterest.com/today">Today</a>
+          <a class="hidden md:max-2xl:block px-2.5 py-2 rounded-lg hover:bg-[#dadada]" href="#">Watch</a>
+          <a class="hidden lg:max-2xl:block px-2.5 py-2 rounded-lg hover:bg-[#dadada]" href="#">Explore</a>
+        </div>
+        <div
+          class="p-nav2 flex items-center justify-center gap-4 px-2 h-full w-1/2 md:max-2xl:gap-3 md:max-2xl:justify-end font-medium text-black 2xl:justify-end max-md:justify-end">
+          <a class="hidden lg:max-2xl:block text-base px-2.5 py-2 rounded-lg hover:underline" href="#">About</a>
+          <a class="hidden md:max-2xl:block text-base px-2.5 py-2 rounded-lg hover:underline" href="#">Business</a>
+          <a class="hidden md:max-2xl:block text-base px-2.5 py-2 rounded-lg hover:underline" href="#">Press</a>
+          <a href="/loginpage">
+
+          <button id="loginbtn" class="cursor-pointer px-3 py-2 rounded-xl bg-[#f73b59] hover:bg-[#E60023] text-white">
+            Log in
+          </button>
+        </a>
+        <a href="/signup">
+          <button id="signupbtn" class="px-3 py-2 cursor-pointer rounded-xl bg-[#f2f0f0] hover:bg-[#E2E2E2] font-medium">
+            Sign Up
+          </button>
+        </a>
+        </div>
+      </div>
+      <div class="p-text w-full h-fit font-medium pt-14 mb-2">
+        <h1 class="text-center mt-16 text-[#211922] text-[4.5vmax]">
+          Get your next
+        </h1>
+      </div>
+      <div style="height: calc(100vh - 220px)" class="p-moving w-full h-screen p-[0.01px] relative overflow-hidde">
+        <div class="p-overlay h-full w-full absolute z-10">
+          <div style="top: 18%; left: 50%; transform: translate(-50%, -50%)"
+            class="swiper-pagination flex justify-center items-start gap-2 h-fit absolute z-15 cursor-pointer"></div>
+          <div style="
+                background: linear-gradient(
+                  rgba(255, 255, 255, 0) 0%,
+                  rgb(255, 255, 255) 70%
+                );
+              " class="p-inoverlay cursor-pointer z-10 w-full h-[3.5rem] absolute bottom-[1rem] flex items-center justify-center md:h-[5rem]">
+            <div class="icon w-6 h-6 rounded-3xl flex items-center justify-center bg-[#E60019] text-white md:w-8 md:h-8">
+              <i class="ri-arrow-down-s-line text-lg md:text-xl"></i>
+            </div>
+          </div>
+          <div class="p-yellow bg-[#FFFD92] w-full absolute bottom-0 flex items-center justify-center">
+            <h6 class="text-xs">
+              Here's how it works <i class="ri-arrow-down-s-line"></i>
+            </h6>
+          </div>
+        </div>
+        <div class="swiper mySwiper w-full h-full mx-auto relative p-[0.01px]">
+          <div class="swiper-wrapper">
+            <div id="swiper1" class="swiper-slide flex items-center justify-center gap-1 text-center text-lg relative pt-14 md:gap-3">
+              <h1
+                class="absolute text-[3.5vmax] left-1/2 top-8 transition-all ease duration-100 transform -translate-x-1/2 w-full font-medium text-[#C28B00]">
+                chai time snacks idea
+              </h1>
+              <div class="w-[6rem] h-full pt-0 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mt-0 md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1601050690294-397f3c324515.avif" alt="" />
+                <img class="block w-full h-[9.3rem] object-cover mt-1 rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1605194000384-439c3ced8d15.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] object-cover mt-1 rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1584949602334-4e99f98286a9.avif" alt="" />
+                <img class="block w-full h-[9.3rem] object-cover mt-1 rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1517093602195-b40af9688b46.avif" alt="" />
+              </div>
+              <div class="w-[6rem] h-full pt-4 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1448131063153-f1e240f98a72.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1516774818621-7d41943dd5b6.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1562547256-2c5ee93b60b7.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1619581073186-5b4ae1b0caad.avif" alt="" />
+              </div>
+              <div class="w-[6rem] h-full pt-20 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1589301773859-bb024d3ad558.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1622715395486-08183374570a.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1609957072860-18eac566fa73.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1536514888772-a269c6a8a198.avif" alt="" />
+              </div>
+              <div class="w-[6rem] h-full pt-36 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/premium_photo-1675451537771-0dd5b06b3985.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1541745537411-b8046dc6d66c.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1546549032-9571cd6b27df.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1536974851270-95538a335a81.avif" alt="" />
+              </div>
+              <div class="w-[6rem] h-full pt-20 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1668236543090-82eba5ee5976.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1644289450169-bc58aa16bacb.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1615435312366-2e4ae52255e9.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5"
+                  src="/images/photo-1587033649773-5c231faa21e3.avif" alt="" />
+              </div>
+              <div class="w-[6rem] h-full pt-4 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1601050690294-397f3c324515.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1605194000384-439c3ced8d15.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1584949602334-4e99f98286a9.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1517093602195-b40af9688b46.avif" alt="" />
+              </div>
+              <div class="w-[6rem] h-full pt-0 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mt-0 md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1517093602195-b40af9688b46.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1516774818621-7d41943dd5b6.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1562547256-2c5ee93b60b7.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1571865402713-98ba5a56f12b.avif" alt="" />
+              </div>
+            </div>
+            <div id="swiper2" class="swiper-slide flex items-center justify-center gap-1 text-center text-lg relative pt-14 md:gap-3">
+              <h1
+                class="absolute text-[3.5vmax] left-1/2 top-8 transition-all ease duration-100 transform -translate-x-1/2 w-full font-medium text-[#0076D3]">
+                home décor idea
+              </h1>
+              <div class="w-[6rem] h-full pt-0 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mt-0 md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1598090216740-eb040d8c3f82.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1623244307563-f9ade3df13c0.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1538577880403-f9998e75dd06.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1616137507072-f7276b168614.avif" alt="" />
+              </div>
+              <div class="w-[6rem] h-full pt-4 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1602305361939-806b254e9f47.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1505330622279-bf7d7fc918f4.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1501127122-f385ca6ddd9d.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/premium_photo-1681980021035-5db5823c974b.avif" alt="" />
+              </div>
+              <div class="w-[6rem] h-full pt-20 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1571913035274-3eeb685eb255.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/premium_photo-1678742388670-4321ef2e1cbe.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1616593918824-4fef16054381.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1625296048730-ada61dcf378b.avif" alt="" />
+              </div>
+              <div class="w-[6rem] h-full pt-36 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1582131503261-fca1d1c0589f.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1577083753695-e010191bacb5.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1516650556972-e9904734f467.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1590326059820-27765ce05586.avif" alt="" />
+              </div>
+              <div class="w-[6rem] h-full pt-20 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1534532335525-79868382477e.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1584116831190-7a5b2765a30a.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1558118720-fa5cdebe6b3a.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1618582383736-ed9080511254.avif" alt="" />
+              </div>
+              <div class="w-[6rem] h-full pt-4 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/premium_photo-1683140589868-4f9b38110050.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1618582383736-ed9080511254.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/premium_photo-1681980021035-5db5823c974b.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1534532335525-79868382477e.avif" alt="" />
+              </div>
+              <div class="w-[6rem] h-full pt-0 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mt-0 md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1577083753695-e010191bacb5.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1590326059820-27765ce05586.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1616593918824-4fef16054381.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1625296048730-ada61dcf378b.avif" alt="" />
+              </div>
+            </div>
+            <div id="swiper3" class="swiper-slide flex items-center justify-center gap-1 text-center text-lg relative pt-14 md:gap-3">
+              <h1
+                class="absolute text-[3.5vmax] left-1/2 top-8 transition-all ease duration-100 transform -translate-x-1/2 w-full font-medium text-[#518C7B]">
+                outfit idea
+              </h1>
+              <div class="w-[6rem] h-full pt-0 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mt-0 md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1657608292087-d6b71b5e504a.avif" alt="" />
+                <img class="block w-full h-[9.3rem] object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1667665970121-c3504c519cda.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1610030469983-98e550d6193c.avif" alt="" />
+                <img class="block w-full h-[9.3rem] object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1659758591866-efe0c572615c.avif" alt="" />
+              </div>
+              <div class="w-[6rem] h-full pt-4 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1610047402714-307d99a677db.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/istockphoto-1442917939-170667a.webp" alt="" /><img
+                  class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1619715613791-89d35b51ff81.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1610030469983-98e550d6193c.avif" alt="" />
+              </div>
+              <div class="w-[6rem] h-full pt-20 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1615886753866-79396abc446e.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1633685894176-9f715a092b79.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1618489335755-e3aa2b16cd7a.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/istockphoto-1442917939-170667a.webp" alt="" />
+              </div>
+              <div class="w-[6rem] h-full pt-36 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1572470176170-98fa8abcb741.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1602210666042-4d76a62d6fcb.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1642956369651-ccc858c72de7.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1633685894176-9f715a092b79.avif" alt="" />
+              </div>
+              <div class="w-[6rem] h-full pt-20 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1677770101470-b1995c36b6b7.avif" alt="" />
+                <img class="block w-full h-[9.3rem] object-cover mt-1 rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1568988041298-26931e97a28e.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] object-cover mt-1 rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1551726824-bbeab11db685.avif" alt="" />
+                <img class="block w-full h-[9.3rem] object-cover mt-1 rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1657608292087-d6b71b5e504a.avif" alt="" />
+              </div>
+              <div class="w-[6rem] h-full pt-4 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1610030469983-98e550d6193c.avif" alt="" />
+                <img class="block w-full h-[9.3rem] object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1659758591866-efe0c572615c.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1610047402714-307d99a677db.avif" alt="" />
+                <img class="block w-full h-[9.3rem] object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1619715613791-89d35b51ff81.avif" alt="" />
+              </div>
+              <div class="w-[6rem] h-full pt-0 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mt-0 md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1642956369651-ccc858c72de7.avif" alt="" />
+                <img class="block w-full h-[9.3rem] object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1633685894176-9f715a092b79.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1602210666042-4d76a62d6fcb.avif" alt="" />
+                <img class="block w-full h-[9.3rem] object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1572470176170-98fa8abcb741.avif" alt="" />
+              </div>
+            </div>
+            <div id="swiper4" class="swiper-slide flex items-center justify-center gap-1 text-center text-lg relative pt-14 md:gap-3">
+              <h1
+                class="absolute text-[3.5vmax] left-1/2 top-8 transition-all ease duration-100 transform -translate-x-1/2 w-full font-medium text-[#507A57]">
+                DIY idea
+              </h1>
+              <div class="w-[6rem] h-full pt-0 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mt-0 md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1574291814206-363acdf2aa79.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1608752503578-52f35965e3d9.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1612950662573-546117a61e78.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1650733251975-e643403c2c60.avif" alt="" />
+              </div>
+              <div class="w-[6rem] h-full pt-4 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1605362242548-3af0d67dd4c3.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1549051529-26168b9e5db4.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/istockphoto-500001899-170667a.webp" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1650733251975-e643403c2c60.avif" alt="" />
+              </div>
+              <div class="w-[6rem] h-full pt-20 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1700993714468-408700d3599e.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1490750967868-88aa4486c946.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1692902288471-4beec045f56d.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1549051529-26168b9e5db4.avif" alt="" />
+              </div>
+              <div class="w-[6rem] h-full pt-36 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1659907521212-8bbdfa688aa6.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/istockphoto-1262683528-170667a.webp" alt="" /><img
+                  class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1513364776144-60967b0f800f.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1574291814206-363acdf2aa79.avif" alt="" />
+              </div>
+              <div class="w-[6rem] h-full pt-20 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1488806374796-a4071c52353b.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1605627079912-97c3810a11a4.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1612105644018-9a076d9c2a1f.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1550433578-86d5ba0ea857.avif" alt="" />
+              </div>
+              <div class="w-[6rem] h-full pt-4 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1612950662573-546117a61e78.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1650733251975-e643403c2c60.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1608752503578-52f35965e3d9.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1605362242548-3af0d67dd4c3.avif" alt="" />
+              </div>
+              <div class="w-[6rem] h-full pt-0 flex-shrink-0 md:w-[13rem]">
+                <img class="block w-full h-[9.3rem] rounded-lg object-cover mt-6 md:h-[18rem] md:mt-0 md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1549051529-26168b9e5db4.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1692902288471-4beec045f56d.avif" alt="" /><img
+                  class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1513364776144-60967b0f800f.avif" alt="" />
+                <img class="block w-full h-[9.3rem] mt-1 object-cover rounded-lg md:h-[18rem] md:mb-2.5 md:rounded-2xl"
+                  src="/images/photo-1574291814206-363acdf2aa79.avif" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="p-page2 w-full flex flex-col items-center justify-between h-screen bg-[#FFFD92] relative p-[0.01px] -mt-2 md:flex-row">
+      <div class="p-page2-top w-full flex items-center justify-center h-1/2 relative z-0 pt-20 md:w-1/2 md:h-full">
+        <div class=" w-full  relative">
+          <img class="w-[12vmax] relative left-[10vmax] top-[2rem] object-cover m-auto cursor-pointer" src="/images/topRight-6902088a.png" alt="" />
+          <img class="w-[14vmax] relative z-10 cursor-pointer object-cover m-auto -left-[12vmax] -top-[1vmax]" src="/images/left-ccce7532.png"
+            alt="" />
+          <img class="w-[11vmax] object-cover left-[10vmax] -top-[5.5vmax] relative z-0 m-auto cursor-pointer" src="/images/right-2bd1edfc.png"
+            alt="" />
+          <img
+            class="w-[20vmax] object-cover origin-center absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-20 cursor-pointer m-auto"
+            src="/images/center-2d76a691.png" alt="" />
+          <div
+            class="bg-white w-[20.5vmax] cursor-pointer gap-2 rounded-3xl h-[6vmax] items-center justify-center flex absolute z-30 top-[40%] left-[50%] -translate-x-[60%] -translate-y-[40%]">
+            <svg class="gUZ R19 U9O kVc" height="20" width="20" viewBox="0 0 24 24" aria-label="search" role="img">
+              <path
+                d="M10 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6m13.12 2.88-4.26-4.26A9.842 9.842 0 0 0 20 10c0-5.52-4.48-10-10-10S0 4.48 0 10s4.48 10 10 10c1.67 0 3.24-.41 4.62-1.14l4.26 4.26a3 3 0 0 0 4.24 0 3 3 0 0 0 0-4.24">
+              </path>
+            </svg>
+            <h1 class="font-semibold text-[1.7vmax] text-[#6E0F3C] md:font-bold md:leading-5">
+              easy chicken dinner
+            </h1>
+          </div>
+        </div>
+      </div>
+      <div class="p-page2-btm w-full h-1/2 flex items-center justify-center  text-[#C31952] text-center p-[0.01px] md:w-1/2 md:h-full">
+        <div>
+          <h1 class="text-[4.5vmax] font-medium mb-12  tracking-wide leading-0 md:tracking-normal md:font-bold">
+            Search for an idea
+          </h1>
+          <h6 class="text-[2vmax] m-auto w-10/12 mb-12 md:text-[1.5vmax]">
+            What do you want to try next? Think of something you’re into – such
+            as 'easy chicken dinner' – and see what you find.
+          </h6>
+          <a href="#"><button class="text-base font-semibold text-[#FFFD92] rounded-2xl bg-[#C31952] px-5 py-3">
+              Explore
+            </button></a>
+        </div>
+      </div>
+    </div>
+    <div class="p-page3 w-full h-screen flex flex-col-reverse items-center text-center justify-between bg-[#dafff6] relative md:flex-row">
+      <div class="p-page3-top w-full h-1/2 flex items-center justify-center text-[#006b6c] text-center md:w-1/2 md:h-full">
+        <div>
+          <h1 class="text-[4.5vmax] font-medium mb-12 tracking-wide leading-0  md:tracking-normal md:font-bold">
+            Save ideas you like
+          </h1>
+          <h6 class="text-[2vmax] m-auto w-10/12 mb-12 md:text-[1.5vmax] md:mb-8">
+            Collect your favourites so you can get back to them later.
+          </h6>
+          <a href="#"><button class="text-base font-semibold text-[#dafff6] rounded-2xl bg-[#006b6c] px-5 py-3">
+              Explore
+            </button></a>
+        </div>
+      </div>
+      <div class="p-page3-btm w-full h-1/2 flex items-center justify-center overflow-hidden md:w-1/2 md:h-full">
+        <div class=" flex items-center w-full h-full justify-evenly  text-white text-center max-lg:md:gap-6">
+          <div class="lft w-1/2 h-full p-[0.01px] flex flex-col items-center justify-evenly gap-7">
+            <div
+              class="w-[22vmax] h-[23vmax] p-[0.1px] bg-cover flex items-end pb-3 justify-start bg-center bg-[url('https://s.pinimg.com/webapp/future-home-vibes-adb19e98.png')]">
+              <h1 class="mt-32 font-semibold leading-7 ml-2 text-[2.6vmax] w-[9rem] md:leading-9 md:w-[80%]">
+                Fern future home vibes
+              </h1>
+            </div>
+            <div
+              class="w-[15vmax] h-[15vmax] p-[0.01px] flex self-end items-center justify-center bg-cover bg-center bg-[url('https://s.pinimg.com/webapp/serve-my-drinks-4de83489.png')]">
+              <h1 class="text-left font-semibold text-[2vmax] leading-6 md:leading-9">
+                Serve my <br />drinks in <br />style
+              </h1>
+            </div>
+          </div>
+          <div class="rgt w-1/2 h-full p-[0.01px] flex flex-col justify-evenly">
+            <div
+              class="w-[17vmax] h-[17vmax] p-[0.01px] flex items-end justify-center self-center bg-cover bg-center bg-[url('https://s.pinimg.com/webapp/scandinavian-bedroom-696dfba5.png')]">
+              <h1 class="font-semibold leading-6 text-[2.2vmax] text-left md:leading-9">
+                My <br />scandinavian <br />bedroom
+              </h1>
+            </div>
+            <div
+              class="w-[11vmax] h-[11vmax] p-[0.01px] flex items-end justify-center bg-cover self-start ml-5 bg-center bg-[url('https://s.pinimg.com/webapp/deck-of-dreams-205a139e.png')]">
+              <h1 class="text-left font-semibold text-[1.4vmax] leading-5 md:leading-7">
+                The decking <br />
+                of my dreams
+              </h1>
+            </div>
+            <div
+              class="w-[14vmax] h-[14vmax] p-[0.01px] rounded-2xl self-center bg-cover flex items-end justify-center bg-center bg-[url('https://s.pinimg.com/webapp/bathroom-upgrade-02599fd4.png')]">
+              <h1 class="text-left font-semibold leading-5 text-[2vmax] md:leading-9">
+                Our <br />bathroom<br />upgrade
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="p-page4 w-full h-screen flex flex-col items-center p-[0.01px] text-center justify-between relative md:flex-row">
+      <div
+        class="page4-top w-full h-1/2 bg-cover flex items-center justify-start bg-top p-[0.01px] bg-[url('https://s.pinimg.com/webapp/shop-de8ddf10.png')] md:w-1/2 md:h-full">
+        <div
+          class="w-[14vmax] h-[25vmax] rounded-2xl bg-cover bg-top ml-[3vmax] relative bg-[url('https://s.pinimg.com/webapp/creator-pin-img-3bed5463.png')]">
+          <div class="w-full h-[5vmax] absolute -bottom-3 flex items-center gap-2">
+            <img class="w-[5vmax]" src="/images/creator-avatar-262dfeba.png" alt="" />
+            <h5 class="text-[1vmax] text-white font-medium self-end">
+              Scout the city <br /><span class="font-normal">56.7K followers</span>
+            </h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="page4-btm flex items-center justify-center w-full h-1/2 text-[#C32f00] bg-[#ffe2eb] p-[0.01px] text-center md:w-1/2 md:h-full">
+        <div>
+          <h1 class="text-[4vmax] font-medium mb-12 tracking-wide leading-0 md:font-bold leading-tight md:tracking-normal">
+            See it, make it, <br />
+            try it, do it
+          </h1>
+          <h6 class="text-[2vmax] m-auto w-10/12 mb-12 md:text-[1.5vmax]">
+            The best part of Pinterest is discovering new things and ideas from
+            people around the world.
+          </h6>
+          <a href="#"><button class="text-base font-semibold text-[#ffe2eb] rounded-2xl bg-[#C32f00] px-5 py-3">
+              Explore
+            </button></a>
+        </div>
+      </div>
+    </div>
+    <div style="background-image: url(/images/Screenshot\ \(3097\).png); background-position:center; background-size: auto;"
+      class="p-page5 w-full h-screen bg-black relative z-20 ">
+      <div style="background-color: rgba(0, 0, 0, 0.473);"
+        class="page5-form overflow-hidden p-[0.01px] flex items-center justify-center w-full absolute z-10 h-screen bg-black bg-opacity-47 md:justify-end md:items-start">
+        <div class="absolute left-[22%] top-[50%] translate-x-[-50%] translate-y-[-50%] max-md:hidden">
+          <h1 class="text-white text-[4.5vmax] font-medium">Sign up to <br> get your <br> ideas</h1>
+        </div>
+        <div
+          class="icon2 w-6 h-6 rounded-3xl cursor-pointer absolute top-[1%] left-[50%] translate-x-[-50%]  flex items-center justify-center bg-[#E60019] text-white md:w-8 md:h-8">
+          <i class="ri-arrow-up-s-line md:text-xl"></i>
+        </div>
+        <div id="signupform" class="form text-center w-fit flex items-center justify-center h-fit md:mr-20 md:h-full">
+          <div class=" p-[0.01px] relative py-2 md:py-3 max-md:border-2 max-md:py-[5vmin] max-md:rounded-3xl md:bg-white md:text-black md:rounded-3xl md:-mt-7">
+            <i id="close2" class="ri-close-line z-50 max-md:hidden md:invisible md:absolute md:cursor-pointer  md:right-2 text-[2.5vmax] md:top-[5.6rem] "></i>
+            <img class=" pin-img w-[4vmax] m-auto md:w-[2.5vmax] md:mix-blend-difference" src="/images/icons8-pinterest-logo-100.png" alt="">
+            <h1 id="h1"
+              class="text-white text-[3vmax] mt-[2vmin] font-normal max-md:mx-[5vmin] md:mx-[1vmax] md:text-black md:tracking-tighter md:font-medium md:-mt-2 md:-mb-2">
+              Welcome to pinterest</h1>
+            <h5 class="text-[1.5vmax] text-white mb-[2vmin] md:text-gray-700 md:mb-1 ">Find new ideas to try</h5>
+            <form action="/register"  method="post">
+              <div class=" flex items-center justify-start flex-col w-fit m-auto md:text-black">
+                <label class="text-white text-[1.7vmax] md:text-[1vmax] self-start  md:text-black" for="email">Email address</label>
+                <input
+                  class="rounded-xl pl-3 h-[3vmax] text-[1.7vmax] w-[18vmax] mt-1 mb-[1vmin]   outline-[#7FC1FF] max-md:w-[26vmax] max-md:h-[4.5vmax] max-md:rounded-3xl md:border-2 md:text-[1vmax] md:mb-0"
+                  type="email" id="email" placeholder="Email address" name="email">
+              </div>
+              <div class=" flex items-center justify-start flex-col w-fit m-auto">
+                <label class="text-white text-[1.7vmax] md:text-[1vmax] self-start  md:text-black" for="fullname">Full name</label>
+                <input
+                  class="rounded-xl pl-3 h-[3vmax] w-[18vmax] mt-1 mb-[2vmin] text-[1.7vmax]  outline-[#7FC1FF] max-md:w-[26vmax] max-md:h-[4.5vmax] max-md:rounded-3xl md:mb-0 md:border-2 md:text-[1vmax]"
+                  type="text" id="fullname" placeholder="fullname" name="name">
+              </div>
+              <div class=" flex items-center justify-start flex-col w-fit m-auto">
+                <label class="text-white text-[1.7vmax] md:text-[1vmax] self-start  md:text-black" for="Username">Username</label>
+                <input
+                  class="rounded-xl pl-3 h-[3vmax] w-[18vmax] mt-1 mb-[2vmin] text-[1.7vmax]  outline-[#7FC1FF] max-md:w-[26vmax] max-md:h-[4.5vmax] max-md:rounded-3xl md:mb-0 md:border-2 md:text-[1vmax]"
+                  type="text" id="Username" placeholder="Username" name="username">
+              </div>
+              <div class=" flex items-center justify-start flex-col w-fit m-auto">
+                <label class="text-white text-[1.7vmax] md:text-[1vmax] self-start  md:text-black" for="Password">Password</label>
+                <input
+                  class="rounded-xl pl-3 h-[3vmax] w-[18vmax] text-[1.7vmax] mt-1 mb-[1vmin]  outline-[#7FC1FF] max-md:w-[26vmax] max-md:h-[4.5vmax] max-md:rounded-3xl md:border-2 md:text-[1vmax] md:mb-1"
+                  type="password" id="Password" placeholder="Password" name="password">
+              </div>
+
+              <button
+                class="bg-[#D50C22] text-white text-[1.5vmax] font-semibold px-[5.5vmax] mb-[1vmin] rounded-xl py-1 max-md:rounded-3xl max-md:px-[7.2vmax] max-md:text-[2vmax] md:mb-[.4vmin]">Continue</button>
+              <h1 class="text-white font-semibold text-sm mb-[1vmin]  md:text-black md:mb-[0.4vmin]">OR</h1>
+              <button
+                class="bg-[#1877f2] mb-[1vmax] text-white text-[1.21vmax] font-semibold px-[.8vmax] rounded-xl py-1 max-md:rounded-3xl max-md:text-[1.6vmax] md:mb-[.2vmax]"
+                type="button"><i class="ri-facebook-circle-line text-xl"></i>&nbsp; Continue With Facebook</button> <br>
+                <a href="/login/federated/google"></a>
+              <button
+                class="bg-transparent border text-white text-[1.21vmax] font-semibold px-[1.6vmax] mb-[1.5vmax] rounded-xl py-1 max-md:px-[1.8vmax] max-md:rounded-3xl max-md:text-[1.6vmax] md:mb-[.1vmax]  md:text-gray-800 md:border-2 "
+                type="button"><i class="ri-google-fill"></i>&nbsp; Continue With Google</button>
+              </a>
+              <h3 class="text-[#dadada] text-[.7vmax] leading-3 max-md:leading-3 max-md:text-[1vmax]  md:text-gray-500 md:-mb-1">By continuing, you agree to
+                Pinterest's <br> <span class="text-white font-medium  md:text-black">Terms of Service</span> and acknowledge you've read our <br><span
+                  class="text-white font-medium  md:text-black">Privacy Policy Notice at collection.</span></h3>
+              <h6 class="text-[#dadada] text-[1vmax] mt-[2vmin] max-md:text-[1.5vmax] md:mt-[.1vmax]  md:text-gray-600">Already a member?
+               <a href="/loginpage"><span class="text-white font-medium md: md:text-black">Log in</span></a>
+              </h6>
+
+            </form>
+          </div>
+        </div>
+        <div
+          class="footer w-full flex items-center justify-between font-medium px-8 h-[4.5vh] text-black text-xs text-center absolute bg-white bottom-0 md:justify-center md:gap-4">
+          <a href="" class="hidden md:block">Terms of Service</a>
+          <a href="" class="hidden md:block">Privacy Policy</a>
+          <a href="" class="hidden md:block">Help</a>
+          <a href="" class="hidden md:block">Iphone app</a>
+          <a href="" class="hidden md:block">Android app</a>
+          <a href="">Users</a>
+          <a href="">Collections</a>
+          <a href="">Shopping</a>
+          <a href="">Today</a>
+          <a href="">Explore</a>
+          <a href="">Watch</a>
+          <a href="">Shop</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"
+    integrity="sha512-7Au1ULjlT8PP1Ygs6mDZh9NuQD0A5prSrAUiPHMXpU6g3UMd8qesVnhug5X4RoDr35x5upNpx0A6Sisz1LSTXA==" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    
+function change() {
+  let tl = gsap.timeline();
+
+  // Reset properties for all images in all slides
+  gsap.set(".swiper-slide img", {
+    y: 0,
+    opacity: 1,
+    visibility: "hidden", // Hide all images initially
+  });
+
+  // Show the active slide's images with stagger effect
+  tl.to(
+    ".swiper-slide-active h1",
+    {
+      y: -25,
+      opacity: 1,
+    },
+    "anime"
+  );
+
+  tl.to(
+    ".swiper-slide-active img",
+    {
+      delay: 0.2,
+      visibility: "visible",
+      y: 0,
+      stagger: 0.04,
+    },
+    "anime"
+  );
+
+  // Apply new animations to the active slide's images
+  tl.to(
+    ".swiper-slide-active img",
+    {
+      delay: 1.7,
+      duration: 2.4,
+      y: -80,
+      opacity: 0,
+      stagger: 0.12,
+    },
+    "saif"
+  );
+
+  tl.to(
+    ".swiper-slide-active h1",
+    {
+      delay: 1.5,
+      y: -60,
+      opacity: 0,
+    },
+    "saif"
+  );
+}
+
+gsap.from(".icon, .icon2", {
+  y: 10,
+  repeat: -1,
+  yoyo: true,
+});
+
+var swiper = new Swiper(".mySwiper", {
+  direction: "vertical",
+  slidesPerView: 1,
+  allowTouchMove: false,
+  loop: true,
+  spaceBetween: 0,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '"></span>';
+    },
+  },
+  on: {
+    init: function () {
+      // Execute the change function on initialization
+      change();
+      updatePaginationColor(this);
+    },
+    slideChangeTransitionEnd: function () {
+      // Execute the change function when the slide changes
+      change();
+      updatePaginationColor(this);
+    },
+    slideNextTransitionStart: function () {
+      // Reset visibility of all images before transitioning to the next slide
+      gsap.set(".swiper-slide img", {
+        visibility: "hidden",
+      });
+      gsap.set(".swiper-slide h1", {
+        opacity: 0,
+        y: 0,
+      });
+    },
+  },
+  autoplay: {
+    delay: 6500,
+    disableOnInteraction: false,
+  },
+});
+
+function updatePaginationColor(swiper) {
+  const colors = ["#C28B00", "#0076D3", "#518C7B", "#518C7B"];
+  const totalSlides = swiper.slides.length;
+  const currentIndex = swiper.realIndex % totalSlides;
+  const paginationBullets = document.querySelectorAll(
+    ".swiper-pagination span"
+  );
+
+  paginationBullets.forEach((bullet, index) => {
+    // bullet.style.transition = "background-color .3s"; // Add transition
+    if (index === currentIndex) {
+      bullet.style.backgroundColor = colors[currentIndex];
+    } else {
+      bullet.style.backgroundColor = "";
+    }
+  });
+}
+
+document.querySelector(".icon").addEventListener("click", function (elem) {
+  console.log(elem);
+  window.scrollTo({
+    top: document.querySelector('.p-page2').offsetTop,
+    behavior: 'smooth'
+  });
+});
+
+document.querySelector(".icon2").addEventListener("click", function (elem) {
+  console.log(elem);
+  window.scrollTo({
+    top: document.querySelector('.p-page1').offsetTop,
+    behavior: 'smooth'
+  });
+});
+
+  </script>
+</body>
+
+</html>

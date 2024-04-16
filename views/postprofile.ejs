@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/feed.css">
+    <link rel="shortcut icon" href="/images/pinterest-logo-png-1984.png" type="image/x-icon">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<style>
+  
+#post{
+  font-size: 1rem;
+  line-height: 60%;
+  width: 10rem;
+  height: 3rem;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius:3rem ;
+  text-transform: capitalize;
+  
+}
+#post a{
+  color: #ffffff;
+}
+</style>
+
+<body>
+     <!-- there is feed upload section -->
+
+
+  <!-- for dp upload  -->
+  
+
+
+
+    <div class="menu">
+        <img draggable="false" class="logo" src="https://cdn1.iconfinder.com/data/icons/logotypes/32/pinterest-512.png">
+        <a class="home" href="/profile" >Home</a>
+        <div id="post"><a href="/post">create post</a></div>
+        <input id="one" type="text" class="search-bar" placeholder="Search">
+        <button id="two" class="search-bar"></button>
+        <div class="icon-container">
+          <img tabindex="1" draggable="false"  class="icon bell" src="https://i.hizliresim.com/rcvolcu.png">
+          <img tabindex="1" draggable="false" class="icon message" src="https://i.hizliresim.com/newumah.png">
+          <img tabindex="1" draggable="false" class="icon pp" src="/images/dpside/<%=user.imagedp%>">
+          <img tabindex="1" draggable="false" class="icon btn" src="https://i.hizliresim.com/g15mqud.png">
+          
+          <!----FOCUS----->
+          <div tabindex="1" class="focus-bar bell-bar">nothing</div>
+          <!-------------------->
+          <div tabindex="1" class="focus-bar message-bar">you are alone</div>
+          <!-------------------->
+          <div tabindex="1" class="focus-bar pp-bar"><img src="/images/dpside/<%=user.imagedp%>"><a href="/feed" >devrimos</a>
+          <h1></h1>
+          </div>
+          <!-------------------->
+          <div tabindex="1" id="btn" class="focus-bar btn-bar">
+            <div class="box">
+              <div class="top">
+                <div class="images">
+                  <img  src="/images/dpside/<%=user.imagedp%>" alt="">
+                </div>
+             
+                <div class="xox">
+
+                  <a href="/feed"><%=user.username%></a>
+                  <p>personal</p>
+                  <a href="/feed"><%=user.email%></a>
+                </div>
+              </div>
+              <div class="navigation">
+  
+                <a id="btn1" class="button1" href="/logout">
+                  <img class="imaan" src="/images/dpside/<%=user.imagedp%>">
+                
+                <div class="logout">LOGOUT</div>
+              
+                </a>
+                
+              </div>
+              
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+      <div class="boxydown">
+        <div class="boxyiamges">
+           
+            <img class="boxy" src="/images/dpside/<%=poster.imagedp%>" alt="">
+
+        </div>
+        <div class="follower">
+          <p><%=poster.followings.length%></p>
+            <p>followings</p>
+        </div>
+        
+        
+        <p><%=poster.username%></p>
+        <div class="logowithemail">
+            <i class="ri-pinterest-line"></i>
+            <p><%=poster.email%></p>
+        
+        </div>
+        <div class="buttontwo">
+          <button>share</button>
+          <button id="btnupdt">Follow</button>
+        
+        </div>
+        <div class="savedarea">
+          <div class="cards">
+            <%poster.posts.forEach(function(post){%>
+              <div class="sqr">
+                
+                <img class="imag1 " src="/images/uploads/<%=post.image%>" alt="">
+                <div class="sqr2">
+                  <h5><%=post.caption%></h5>
+                </div>
+               
+              </div>
+            <%}) %>
+            
+          </div>
+           
+       
+          
+      </div>
+</body>
+<script>
+  
+ 
+
+
+</script>
+
+</html>

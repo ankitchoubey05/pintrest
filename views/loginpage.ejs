@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/stylesheets/register.css">
+  <link rel="shortcut icon" href="/images/pinterest-logo-png-1984.png" type="image/x-icon">
+
+  
+</head>
+<style>
+  *{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+
+  }
+  html,body{
+    width: 100%;
+    height: 100%;
+  }
+  .error{
+    font-weight: 600;
+    font-size: 15px;
+    color: red;
+    text-transform: capitalize;
+    margin:7px 0px ;
+  }
+</style>
+<body>
+  <div class="container">
+    <div class="content">
+      <!--pinterest logo-->
+      <img src="https://i.pinimg.com/originals/d3/d1/75/d3d175e560ae133f1ed5cd4ec173751a.png" alt="pin logo" class="img1" />
+      <p class="header">Login here</p>
+      <% if(error.length > 0){ %>
+        <p class="error"><%=error%></p>
+      <% } %>
+      <form action="/login" method="post">
+        
+        <input type="text" name="username" placeholder="username" class="detail">
+        
+        <input type="password" name="password"  placeholder="Password" class="detail" />
+  
+       
+  
+        <button type="submit" class="btn int">login up</button>
+      </form>
+
+     
+    
+      
+       
+      
+      <a class="upbtn" href="/signup">sign up</a>
+    </div>
+  </div>
+
+   
+  </div>
+</body>
+</html>

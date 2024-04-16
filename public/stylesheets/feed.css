@@ -1,0 +1,432 @@
+
+    *{
+    outline:none;
+  }
+  body{
+    margin:0px;
+    padding:0px;
+    font-family: gilroy;
+  }
+  img{
+    user-select:none;
+  }
+  
+  /*MENU*/
+  .menu{
+    max-width:100%;
+    display:flex;
+    align-items:center;
+    padding:10px;
+    font-weight:bold;
+  }
+  .menu .logo{
+    width:25px;
+    padding:10px;
+    cursor:pointer;
+    border-radius:50%;
+  }
+  .menu .logo:hover{
+    background:#eeeeee;
+  }
+  .menu .home{
+    color:#fff;
+    background:#000000;
+    padding:12px 25px;
+    cursor:pointer;
+    user-select:none;
+    border-radius:40px;
+    margin:0px 5px;
+  }
+  .menu .search-bar{
+    width:100%;
+    margin:0px 5px;
+    padding:12px 35px;
+    border-radius:40px;
+    outline:none;
+    position:relative;
+    background-color:#efefef;
+    font-size:15px;
+    background-image:url("https://cdn4.iconfinder.com/data/icons/music-ui-solid-24px/24/search-3-256.png");
+    background-size:21px;
+    background-repeat:no-repeat;
+    background-position:center left;
+    background-position:10px;
+    color:gray;
+    border:4px solid transparent;
+  }
+  .menu .search-bar:hover{
+    background-color:#3333;
+  }
+  .menu .search-bar:focus{
+    border:4px solid #7bb5f0;
+    padding:12px 20px;
+    background-image:none;
+  }
+  .menu .search-bar::placeholder{
+    user-select:none;
+  }
+  .icon-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+  }
+  .icon-container .icon{
+    width:25px;
+    height: 25px;
+    border-radius:50%;
+    cursor:pointer;
+    padding:10px;
+  }
+  .icon-container .icon:hover{
+    background-color:#eeeeee;
+  }
+  .icon-container .btn{
+    width:14px;
+    padding:5px;
+    display: flex;
+    justify-content: start;
+    
+  }
+  .focus-bar{
+    width:250px;
+    height:350px;
+    border-radius:15px;
+    background:#fff;
+    border:2px solid #3333;
+    position:absolute;
+    top:40px;/*50px*/
+    left:-100px;
+    visibility:hidden;
+    opacity:0;
+    transition:all 0.3s;
+   
+    user-select:none;
+    z-index:99;
+  }
+  .bell:focus + .message + .pp + .btn + .bell-bar, .bell-bar:focus{
+    visibility:visible;
+    opacity:1;
+    top:50px;
+  }
+  .message:focus + .pp + .btn + .bell-bar + .message-bar, .message-bar:focus{
+    visibility:visible;
+    opacity:1;
+    top:50px;
+  }
+  .pp:focus + .btn + .bell-bar + .message-bar + .pp-bar, .pp-bar:focus{
+    visibility:visible;
+    opacity:1;
+    top:50px;
+  }
+  .btn:focus + .bell-bar + .message-bar + .pp-bar + .btn-bar, .btn-bar:focus{
+    visibility:visible;
+    opacity:1;
+    top:50px;
+   
+  }
+ 
+  .pp-bar a{
+    text-decoration:none;
+    padding:5px 15px;
+    border:2px solid #161b22;
+    color:#161b22;
+    border-radius:5px;
+  }
+  .pp-bar{
+    flex-direction:column;
+  }
+  .pp-bar img{
+    width:150px;
+    height: 150px;
+    border-radius:50%;
+    margin-bottom:20px;
+    object-fit: fill;
+    object-position: center;
+  }
+  .pp-bar a:hover{
+    background:#161b22;
+    color:white;
+  }
+  
+  /*MINI SEARCH BAR*/
+  #two{
+    display:none;
+    padding:15px;
+  }
+  .responsive-search-bar{
+    max-width:100%;
+    padding:40px 10px;
+    text-align:center;
+    border-radius:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    top:-300px;
+    transition:all 0.3s;
+    overflow:hidden;
+    display:none;
+    background:#fff;
+    box-shadow: 0px 0px 2px 0px #333;
+    margin:0px 5px;
+    z-index:99;
+  }
+  .responsive-search-bar input{
+    width:100%;
+    height:35px;
+    outline:none;
+    border-radius:40px;
+    border:4px solid transparent;
+    background-image:url("https://cdn4.iconfinder.com/data/icons/music-ui-solid-24px/24/search-3-256.png");
+    background-size:21px;
+    background-repeat:no-repeat;
+    background-position:center left;
+    background-position:10px;
+    padding:0px 15px 0px 35px;
+    background-color:#efefef;
+  }
+  .responsive-search-bar input:focus{
+    border:4px solid #7bb5f0;
+  }
+  .responsive-search-bar p{
+    font-size:11px;
+    padding:11px;
+    margin-left:5px;
+    border-radius:50%;
+    cursor:pointer;
+    user-select:none;
+    position:absolute;
+    top:-12px;
+    right:-1px;
+    transition:all 0.3s;
+  }
+  .responsive-search-bar p:hover{
+    background:#eeeeee;
+    transform:rotate(-180deg);
+  }
+  a{
+    text-decoration: none;
+  }
+ 
+  .box{
+    width: 100%;
+    height: 40vh;
+    background-color: rgba(68, 53, 53, 0.354);
+  }
+  .top{
+    margin-top: 5%;
+    width: 100%;
+    height: 13vh;
+    /* background-color: wheat; */
+    display: flex;
+    justify-content: start;
+    align-items: center;
+ 
+  }
+.images{
+  width: 50px;
+  height: 50px;
+  background-color: rgb(169, 161, 161);
+  border-radius: 50%;
+  overflow: hidden;
+}
+ img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+.boxydown{
+    width: 100%;
+  height: fit-content;
+    background-color: rgba(243, 239, 239, 0.788);
+    display: flex;
+    padding-top: 0.1px;
+
+    line-height: 0%;
+    align-items: center;
+    flex-direction:column ;
+  }
+  .boxyiamges{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    
+    
+    background-color: rgb(26, 78, 248);
+  }
+
+  .boxy{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    /* overflow: hidden; */
+    object-position: center;
+  }
+  .logowithemail{
+    display: flex;
+    align-items: center;
+  }
+  .buttontwo {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+  .buttontwo button{
+    
+    margin-top: 5%;
+    padding: 13px 18px;
+    background-color: #f1f1f1de;
+    color: #000000;
+    border-radius: 45%;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    transition: all ease .3s;
+    
+  }
+  button:hover{
+    background-color:  #ded9d9;
+  }
+.savedarea{
+  margin-top: 5%;
+  width: 100%;
+  height: fit-content;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: nowrap; */
+  justify-content: center;
+ 
+  
+
+}
+.cards{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  
+  
+}
+.cards img{
+  object-fit: fill;
+  object-position: center;
+}
+.sqr{
+  
+  margin: 15px 10px;
+  width: 15rem;
+  height: 19rem;
+  /* background-color: yellow; */
+  display: flex;
+  flex-direction: column;
+
+
+}
+.sqr2{
+  width: 100%;
+  height: fit-content;
+  background-color: rgb(254, 254, 254);
+  font-family: gilroy;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  border-radius: 30px;
+  
+}
+h5{
+  font-weight: 400;
+}
+.imag1{
+  width: 15rem;
+  height: 100%;
+  object-fit: fill;
+  object-position: center;
+  border-radius: 10px;
+  
+}
+  .xox{
+    font-size: 13px;
+    font-weight: 500;
+    font-family: gilroy;
+    display: flex;
+    flex-direction: column;
+    margin-left: 3%;
+    justify-content: center;
+  }
+  .xox p{
+    font-weight: 300;
+  }
+
+  @import url(https://fonts.googleapis.com/css?family=Oswald:400);
+
+  .navigation {
+    width: 100%;
+    background-color: black;
+  }
+  
+  .navigation .imaan {
+    width: 25px;
+    border-radius: 50px;
+    float: left;
+  }
+  
+  .navigation .logout {
+    font-size: .8em;
+    font-family: 'Oswald', sans-serif;
+    position: relative;
+    right: -18px;
+    bottom: -4px;
+    overflow: hidden;
+    letter-spacing: 3px;
+    opacity: 0;
+    transition: opacity .45s;
+    -webkit-transition: opacity .35s;
+    
+  }
+  
+  .navigation .button1 {
+    text-decoration: none;
+    float: right;
+    padding: 12px;
+    margin: 15px;
+    color: white;
+    width: 25px;
+    background-color: black;
+    transition: width .35s;
+    -webkit-transition: width .35s;
+    overflow: hidden;
+  }
+  
+  .navigation  a:hover{
+    width: 100px;
+  }
+  
+  .navigation  a:hover .logout{
+    opacity: .9;
+  }
+  
+  .navigation a {
+    text-decoration: none;
+  }
+  
+  .follower{
+    display: flex;
+    justify-self: center;
+    gap: .7rem;
+  }
+
+  

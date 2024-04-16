@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+    <link rel="shortcut icon" href="/images/pinterest-logo-png-1984.png" type="image/x-icon">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    
+</head>
+<style>
+  
+  @import url(https://fonts.googleapis.com/css?family=Oswald:400);
+
+  .navigation {
+    width: 100%;
+    background-color: black;
+  }
+  
+  .navigation .imaan {
+    width: 25px;
+    border-radius: 50px;
+    float: left;
+  }
+  
+  .navigation .logout {
+    font-size: .8em;
+    font-family: 'Oswald', sans-serif;
+    position: relative;
+    right: -18px;
+    bottom: -4px;
+    overflow: hidden;
+    letter-spacing: 3px;
+    opacity: 0;
+    transition: opacity .45s;
+    -webkit-transition: opacity .35s;
+    
+  }
+  
+  .navigation .button1 {
+    text-decoration: none;
+    float: right;
+    padding: 12px;
+    margin: 15px;
+    color: white;
+    width: 25px;
+    background-color: black;
+    transition: width .35s;
+    -webkit-transition: width .35s;
+    overflow: hidden;
+  }
+  
+  .navigation  a:hover{
+    width: 100px;
+  }
+  
+  .navigation  a:hover .logout{
+    opacity: .9;
+  }
+  
+  .navigation a {
+    text-decoration: none;
+  }
+  
+</style>
+
+
+<body>
+      <div hidden class="sqr">
+          <div class="boxsqr">
+            <div class="sidesearch">
+    
+            </div>
+          </div>
+      </div>
+        <div class="menu">
+          <img draggable="false" class="logo" src="https://cdn1.iconfinder.com/data/icons/logotypes/32/pinterest-512.png">
+          <a class="home" href="/profile" >Home</a>
+          <div id="post"><a href="/post">create post</a></div>
+         
+          <input id="one" type="text" class="search-bar" placeholder="Search">
+      
+          <button id="two" class="search-bar"></button>
+          <div class="icon-container">
+            <img tabindex="1" draggable="false"  class="icon bell" src="https://i.hizliresim.com/rcvolcu.png">
+            <img tabindex="1" draggable="false" class="icon message" src="https://i.hizliresim.com/newumah.png">
+            
+            <img tabindex="1" draggable="false" class="icon pp" src="/images/dpside/<%=user.imagedp%>">
+            <img tabindex="1" draggable="false" class="icon btn" src="https://i.hizliresim.com/g15mqud.png">
+            
+            <!----FOCUS----->
+            <div tabindex="1" class="focus-bar bell-bar">nothing</div>
+            <!-------------------->
+            <div tabindex="1" class="focus-bar message-bar">you are alone</div>
+            <!-------------------->
+            <div tabindex="1" class="focus-bar pp-bar"><img  src="/images/dpside/<%=user.imagedp%>"><a href="/feed" >devrimos</a>
+            <h1></h1>
+            </div>
+            <!-------------------->
+            <div tabindex="1" id="btn" class="focus-bar btn-bar">
+              <div class="box">
+                <div class="top">
+                  <a href="/feed">
+                    
+                    <div class="images ">
+                      <img src="/images/dpside/<%=user.imagedp%>" alt="">
+                    </div>
+                  </a>
+               <div class="xox">
+
+                 <a href="/feed"><%=user.username%></a>
+                 <p>personal</p>
+                 <a href="/feed"><%=user.email%></a>
+               </div>
+                </div>
+                
+            <div class="navigation">
+  
+	            <a class="button1" href="/logout">
+  	            <img src="/images/dpside/<%=user.imagedp%>">
+  
+               <div class="logout">LOGOUT</div>
+
+	                </a>
+  
+                            </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        <!--------------------------->
+        <div class="responsive-search-bar">
+            <input type="text">
+            <p class="close">❌</p>
+          </div>
+        <!--------------------------->
+        <div class="container">
+          <% posts.forEach(function(post){%>
+            <a href="/viewpost/<%=post._id%>">
+            <div class="window">
+          
+
+
+                <div class="wind">
+  
+                  <img class="foto" src="/images/uploads/<%=post.image%>">
+                  
+                </div>
+             
+                <!-- <h5><%=post.caption%></h5> -->
+          
+             
+              <div class="hover-zone">
+                <div class="top-bar">
+                  <p>view picture</p>
+                 
+                </div>
+             
+                <div class="bottom-bar">
+                  <!-- <a href="">↗ website.com</a> -->
+                  <div class="radius-ico">
+                    <img src="https://cdn3.iconfinder.com/data/icons/iconset-1-1/24/icon_set_outlinder-10-256.png">
+                    <img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-more-256.png">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+           
+          <%})%>
+       
+          <!-------------------->
+       
+          <!-------------------->
+         
+          <!-------------------->
+         
+          
+        </div>
+      </body>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js" integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+      let inp=document.querySelector("#one");
+      let clutter="";
+      inp.addEventListener("input",function(){
+        axios.get(`/username/${inp.value}`)
+        .then(function(data){
+          clutter=""
+          console.log(data)
+          data.data.forEach(function(data){
+            clutter +=`
+            <a href="/postprofile/${data._id}">
+       
+        <i class="ri-user-search-line"></i>
+        <h1>${data.username}</h1>
+          </a>
+            ` 
+              //  console.log(elem.id)
+          })
+          document.querySelector(".boxsqr").innerHTML=clutter;
+        })
+    
+        
+      })
+// dynamic me value input ki chaiye h na ki current user ki 
+
+
+    document.getElementById("two").onclick=function(){
+    document.getElementById("two").style.pointerEvents="none";
+    document.getElementById("two").style.opacity="0.5";
+    document.querySelector(".responsive-search-bar").style.top="0px";
+  }
+  document.querySelector(".close").onclick=function(){
+    document.getElementById("two").style.pointerEvents="auto";
+    document.getElementById("two").style.opacity="1";
+    document.querySelector(".responsive-search-bar").style.top="-300px";
+  }
+
+  var flag=0;
+  document.querySelector("#one").addEventListener("click",function(){
+    if(flag==0){
+      
+      document.querySelector(".sqr").style.display="none";
+      flag=1;
+    }
+    else{
+
+      document.querySelector(".sqr").style.display="initial";
+      flag=0;
+    }
+  })
+ 
+  
+</script>
+</html>
