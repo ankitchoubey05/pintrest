@@ -223,15 +223,21 @@ router.get('/postprofile/:postid',isloggedIn, async function (req, res, next) {
   res.render("postprofile",{poster,user,error:req.flash("error")})
 });
 
-
-router.get( '/viewpost/:postid',isloggedIn,async (req,res,next)=>{
-  let user = await usermodel.findOne({username:req.session.passport.user})
-  let post = await postmodel.findOne({_id:req.params.postid}).populate("user")
-  .populate({path:'comments',populate:{path:"User"}
-})
-   
-res.render('viewpost', { user, post });
-})
+router.get('/viewpost/:postid', isloggedIn, async (req, res, next) => {
+  try {
+    let user = await usermodel.findOne({ username: req.session.passport.user });
+    let post = await postmodel
+      .findOne({ _id: req.params.postid })
+      .populate('user')
+      .populate({ path: 'comments', populate: { path: 'user' } });
+   console.log(post)
+    res.render('viewpost', { user, post });
+  } catch (error) {
+    // Handle errors
+    console.error('Error occurred:', error);
+    res.status(500).send('An error occurred while processing your request.');
+  }
+});
 
 
 
@@ -318,21 +324,20 @@ router.post('/post/:postId/comment', async (req, res) => {
     const { comment } = req.body;
 
     // Find the post by ID
-    const post = await postmodel.findById(postId);
-
-  
-
+    const post = await postmodel.findById(postId).populate("comments");
+   
     // Add the new comment to the post
-    post.comments.push({ user: req.user.id, comment });
+    post.comments.push({ user: req.user, comment });
     await post.save();
-
+     
     // Send back the updated list of comments
-    res.json({ comments: post.comments });
+    res.json(post);
   } catch (error) {
     console.error('Error posting comment:', error);
     res.status(500).json({ message: 'Internal Server Error' });
   }
 });
+
 /* for like button */
 // Route for liking or unliking a post
 router.post('/post/:postId/like', async (req, res) => {

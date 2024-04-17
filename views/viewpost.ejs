@@ -168,8 +168,8 @@
                       <div class="commentsv">
                         <% post.comments.forEach(function(comment) { %>
                           <div class="usercomment">
-                            <img src="/images/dpside/<%=user.imagedp%>" alt="">
-                            <h1><%= user.username %></h1>
+                            <img src="/images/dpside/<%=comment.user.imagedp%>" alt="">
+                            <h1><%= comment.user.username %></h1>
                             <a href=""><%= comment.comment %></a>
                           </div>
                         <% }); %>
@@ -186,7 +186,7 @@
                       
                       <div class="bottomcomment">
                         <img src="/images/dpside/<%=user.imagedp%>" alt="">
-                        <input id="commentInput" type="text" placeholder="Add a comment">
+                        <input id="commentInput" type="" placeholder="Add a comment">
                         <p id="submitComment" ><i class="ri-send-plane-fill"></i></p>
                       </div>
                     </div>
